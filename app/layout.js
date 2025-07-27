@@ -1,5 +1,6 @@
 import Logo from "./components/Logo";
 import Navigation from "./components/Navigation";
+import './global.css';
 
 export const metadata = {
   title: "NIKO'S HOTEL",
