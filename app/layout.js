@@ -15,6 +15,7 @@ export default function RootLayout({ children }) {
           <Navigation />
         </header>
         {children}
+        <p>Copyright Niko&apos;s hotel</p>
       </body>
     </html>
   )
