@@ -3,11 +3,18 @@ import Image from "next/image";
 
 function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-4 z-10">
-      <Image src="/logo.png" height={50} width={100} alt="The Niko's hotel logo" />
-      <span className="text-xl font-semibold text-primary-100">
-        NIKO&apos;S HOTEL
-      </span>
+    <Link
+      href="/"
+      className="flex items-center gap-3 sm:gap-4 z-10 hover:opacity-90 transition-opacity duration-300"
+    >
+      <Image
+        src="/logo.png"
+        alt="Niko's Hotel logo"
+        width={100}
+        height={50}
+        className="h-12 w-auto sm:h-14 object-contain"
+        priority
+      />
     </Link>
   );
 }
