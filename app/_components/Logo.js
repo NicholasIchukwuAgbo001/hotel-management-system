@@ -12,7 +12,7 @@ function Logo() {
         alt="Niko's Hotel logo"
         width={100}
         height={50}
-        className="h-12 w-auto sm:h-14 object-contain"
+        className="h-12 w-auto sm:h-14 object-contain rounded-sm"
         priority
       />
     </Link>
