@@ -1,10 +1,10 @@
-import Logo from "./components/Logo";
-import Navigation from "./components/Navigation";
-import './global.css';
+import Logo from "./_components/Logo";
+import Navigation from "./_components/Navigation";
+import "./global.css";
 
 export const metadata = {
   title: "NIKO'S HOTEL",
-}
+};
 
 export default function RootLayout({ children }) {
   return (
@@ -18,5 +18,5 @@ export default function RootLayout({ children }) {
         <p>Copyright Niko&apos;s hotel</p>
       </body>
     </html>
-  )
+  );
 }
