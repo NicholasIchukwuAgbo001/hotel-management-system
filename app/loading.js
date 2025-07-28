@@ -1,9 +1,7 @@
 import Spinner from "@/app/_components/Spinner"
 
 const Loading = () => {
-  return (
-    <Spinner />
-  )
+  return <Spinner />
 }
  
 export default Loading
