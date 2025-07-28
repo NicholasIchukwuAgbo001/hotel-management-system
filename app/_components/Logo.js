@@ -11,6 +11,7 @@ function Logo() {
         alt="Niko's Hotel logo"
         width={100}
         height={60}
+        quality={100}
         className="h-12 sm:h-16 w-auto object-contain rounded-full"
         priority
       />
