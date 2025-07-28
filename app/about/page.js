@@ -37,7 +37,9 @@ export default function Page() {
         <Image
           src={about1}
           alt="Hotel room with elegant decor"
-          className="w-full h-auto rounded-xl"
+          className="w-full h-auto rounded-xl object-cover aspect-square"
+          placeholder="blur"
+          quality={80}
         />
       </div>
 
@@ -46,7 +48,9 @@ export default function Page() {
         <Image
           src={about2}
           alt="Staff of Niko's Hotel smiling in front of hotel entrance"
-          className="w-full h-auto rounded-xl"
+          className="w-full h-auto rounded-xl object-cover aspect-square"
+          placeholder="blur"
+          quality={80}
         />
       </div>
 
