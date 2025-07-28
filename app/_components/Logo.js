@@ -5,7 +5,7 @@ import logo from "@/public/hotel-logo.png"
 
 function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-4">
+    <Link href="/" className="flex items-center gap-4 z-20">
       <Image
         src={logo}
         alt="Niko's Hotel logo"
