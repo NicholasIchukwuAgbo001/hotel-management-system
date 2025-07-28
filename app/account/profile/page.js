@@ -1,8 +1,8 @@
+import Image from "next/image";
 import SelectCountry from "@/app/_components/SelectCountry";
 
 export default function Page() {
-  // CHANGE
-  const countryFlag = "pt.jpg";
+  const countryFlag = "/pt.jpg"; 
   const nationality = "portugal";
 
   return (
@@ -17,6 +17,7 @@ export default function Page() {
       </p>
 
       <form className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col">
+       
         <div className="space-y-2">
           <label>Full name</label>
           <input
@@ -25,6 +26,7 @@ export default function Page() {
           />
         </div>
 
+    
         <div className="space-y-2">
           <label>Email address</label>
           <input
@@ -33,13 +35,16 @@ export default function Page() {
           />
         </div>
 
+       
         <div className="space-y-2">
           <div className="flex items-center justify-between">
             <label htmlFor="nationality">Where are you from?</label>
-            <img
+            <Image
               src={countryFlag}
               alt="Country flag"
-              className="h-5 rounded-sm"
+              width={24}
+              height={16}
+              className="h-5 rounded-sm object-cover"
             />
           </div>
 
@@ -51,6 +56,7 @@ export default function Page() {
           />
         </div>
 
+      
         <div className="space-y-2">
           <label htmlFor="nationalID">National ID number</label>
           <input
@@ -59,6 +65,7 @@ export default function Page() {
           />
         </div>
 
+       
         <div className="flex justify-end items-center gap-6">
           <button className="bg-accent-500 px-8 py-4 text-primary-800 font-semibold hover:bg-accent-600 transition-all disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300">
             Update profile
