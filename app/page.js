@@ -23,7 +23,7 @@ export default function Page() {
   useEffect(() => {
     setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000);
+    }, 5000);
   }, []);
 
   return (
