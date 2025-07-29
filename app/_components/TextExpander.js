@@ -8,7 +8,7 @@ function TextExpander({ children }) {
   const text = typeof children === "string" ? children : children?.toString();
   const displayText = isExpanded
     ? text
-    : text.split(" ").slice(0, 30).join(" ") + "...";
+    : text.split(" ").slice(0, 25).join(" ") + "...";
 
   return (
     <div>
