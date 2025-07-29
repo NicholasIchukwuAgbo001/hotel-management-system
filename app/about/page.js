@@ -2,12 +2,11 @@ import Image from "next/image";
 import about1 from "@/public/about-1.jpg";
 import about2 from "@/public/about-2.jpg";
 import Link from "next/link";
-
 export const metadata = {
   title: "About",
 };
 
-export default function Page() {
+export default  async function Page() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-5 gap-y-16 md:gap-x-16 px-4 sm:px-6 md:px-10 lg:px-20 py-16 text-base md:text-lg items-center">
       
