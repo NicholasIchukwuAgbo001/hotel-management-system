@@ -1,16 +1,22 @@
-import { getCabin, getCabins } from "@/app/_lib/data-service";
+import TextExpander from "@/app/_components/TextExpander";
+import { getCabin } from "@/app/_lib/data-service";
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
-export async function generateMetadata({ params }) {
-  const { cabinId } = await params;
-  const { name } = await getCabin(cabinId);
-  return { title: `Cabin ${name}` };
+export async function generateMetadata(context) {
+  const params = await context.params;
+  const cabin = await getCabin(params.cabinId);
+
+  if (!cabin) {
+    return { title: "Cabin Not Found" };
+  }
+
+  return { title: `Cabin ${cabin.name}` };
 }
 
-export default async function Page({ params }) {
-  const { cabinId } = await params;
-  const cabin = await getCabin(cabinId);
+export default async function Page(context) {
+  const params = await context.params;
+  const cabin = await getCabin(params.cabinId);
 
   if (!cabin) {
     return (
@@ -40,7 +46,11 @@ export default async function Page({ params }) {
             Cabin {name}
           </h3>
 
-          <p className="text-lg text-primary-300 mb-10">{description}</p>
+          <div className="text-lg text-primary-300 mb-10">
+            <TextExpander>
+              {description}
+            </TextExpander>
+          </div>
 
           <ul className="flex flex-col gap-4 mb-7">
             <li className="flex gap-3 items-center">
