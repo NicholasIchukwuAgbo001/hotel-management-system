@@ -1,21 +1,38 @@
 import { getCabin } from "@/app/_lib/data-service";
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
 
-export default async function Page({params}) {
-  const cabin = await getCabin(params.cabinId)
+export default async function Page({ params }) {
+  let cabin;
 
-  const { id, name, maxCapacity, regularPrice, discount, image, description } =
-    cabin;
+  try {
+    cabin = await getCabin(params.cabinId);
+    if (!cabin) throw new Error("Cabin not found");
+  } catch (error) {
+    return (
+      <div className="text-red-500 text-center mt-20 text-xl">
+        Failed to load cabin. Please try again later.
+      </div>
+    );
+  }
+
+  const { name, maxCapacity, regularPrice, discount, image, description } = cabin;
 
   return (
-    <div className="max-w-6xl mx-auto mt-8">
-      <div className="grid grid-cols-[3fr_4fr] gap-20 border border-primary-800 py-3 px-10 mb-24">
-        <div className="relative scale-[1.15] -translate-x-3">
-          <img src={image} alt={`Cabin ${name}`} />
+    <div className="max-w-6xl mx-auto mt-8 px-4 sm:px-6">
+      <div className="grid grid-cols-1 md:grid-cols-[3fr_4fr] gap-10 md:gap-20 border border-primary-800 py-6 px-6 md:px-10 mb-24">
+        <div className="relative w-full h-[300px] md:h-[400px] overflow-hidden">
+          <Image
+            src={image}
+            alt={`Cabin ${name}`}
+            fill
+            className="object-cover rounded-lg"
+            priority
+          />
         </div>
 
         <div>
-          <h3 className="text-accent-100 font-black text-7xl mb-5 translate-x-[-254px] bg-primary-950 p-6 pb-1 w-[150%]">
+          <h3 className="text-accent-100 font-black text-4xl sm:text-6xl md:text-7xl mb-5 bg-primary-950 p-4 rounded-lg shadow-md">
             Cabin {name}
           </h3>
 
@@ -25,10 +42,10 @@ export default async function Page({params}) {
             <li className="flex gap-3 items-center">
               <UsersIcon className="h-5 w-5 text-primary-600" />
               <span className="text-lg">
-                For up to <span className="font-bold">{maxCapacity}</span>{" "}
-                guests
+                For up to <span className="font-bold">{maxCapacity}</span> guests
               </span>
             </li>
+
             <li className="flex gap-3 items-center">
               <MapPinIcon className="h-5 w-5 text-primary-600" />
               <span className="text-lg">
@@ -36,6 +53,7 @@ export default async function Page({params}) {
                 <span className="font-bold">Dolomites</span> (Italy)
               </span>
             </li>
+
             <li className="flex gap-3 items-center">
               <EyeSlashIcon className="h-5 w-5 text-primary-600" />
               <span className="text-lg">
@@ -47,7 +65,7 @@ export default async function Page({params}) {
       </div>
 
       <div>
-        <h2 className="text-5xl font-semibold text-center">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center text-primary-100">
           Reserve today. Pay on arrival.
         </h2>
       </div>
