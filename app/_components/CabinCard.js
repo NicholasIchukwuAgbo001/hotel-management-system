@@ -7,7 +7,6 @@ function CabinCard({ cabin }) {
 
   return (
     <div className="flex flex-col md:flex-row border border-primary-800 rounded-xl overflow-hidden">
-      {/* Image Section */}
       <div className="relative w-full md:w-1/2 aspect-video md:aspect-auto min-h-[200px]">
         <Image
           src={image}
@@ -17,7 +16,6 @@ function CabinCard({ cabin }) {
         />
       </div>
 
-      {/* Content Section */}
       <div className="flex flex-col justify-between flex-1 bg-primary-950">
         <div className="pt-5 pb-4 px-5 sm:px-7">
           <h3 className="text-accent-500 font-semibold text-2xl mb-3">
@@ -35,14 +33,14 @@ function CabinCard({ cabin }) {
             {discount > 0 ? (
               <>
                 <span className="text-3xl font-[350]">
-                  ${regularPrice - discount}
+                  ₦{regularPrice - discount}
                 </span>
                 <span className="line-through font-semibold text-primary-600">
-                  ${regularPrice}
+                  ₦{regularPrice}
                 </span>
               </>
             ) : (
-              <span className="text-3xl font-[350]">${regularPrice}</span>
+              <span className="text-3xl font-[350]">₦{regularPrice}</span>
             )}
             <span className="text-primary-200">/ night</span>
           </p>
