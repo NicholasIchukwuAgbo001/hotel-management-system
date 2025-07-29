@@ -2,6 +2,9 @@ import Image from "next/image";
 import about1 from "@/public/about-1.jpg";
 import about2 from "@/public/about-2.jpg";
 import Link from "next/link";
+
+export const revalidate = 86400;
+
 export const metadata = {
   title: "About",
 };
