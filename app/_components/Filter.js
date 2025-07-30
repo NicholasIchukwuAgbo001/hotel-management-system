@@ -17,7 +17,7 @@ const Filter = () => {
 
   const baseBtn =
     "px-4 py-2 text-sm sm:text-base rounded-md transition-colors";
-  const activeClass = "bg-primary-600 text-white";
+  const activeClass = "bg-yellow-600 text-white";
   const inactiveClass = "hover:bg-primary-700 text-primary-500";
 
   return (
