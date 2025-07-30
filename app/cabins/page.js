@@ -9,9 +9,9 @@ export const metadata = {
   title: "Cabins",
 };
 
-export default function Page({ searchParams }) {
-  const filter = searchParams?.capacity ?? "all";
-
+export default async function Page({searchParams}) {
+  const filter = searchParams?.capacity ?? "all"
+  
   return (
     <div className="mt-10">
       <h1 className="text-4xl mb-5 text-accent-400 font-medium">
@@ -25,12 +25,14 @@ export default function Page({ searchParams }) {
         away from home. The perfect spot for a peaceful, calm vacation. Welcome
         to paradise.
       </p>
-
-      <div className="flex justify-end mb-8">
+      
+      <div className="flex justify-end mb-8"> 
         <Filter />
       </div>
-
-      <Suspense fallback={<Spinner />} key={filter}>
+      
+      <Suspense fallback={<Spinner />}
+      key={filter}
+      >
         <CabinList filter={filter} />
       </Suspense>
     </div>
