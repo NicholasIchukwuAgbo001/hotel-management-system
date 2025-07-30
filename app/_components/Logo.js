@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/public/hotel-logo.png"
-
+import logo from "@/public/hotel-logo.png";
 
 function Logo() {
   return (
@@ -15,7 +14,9 @@ function Logo() {
         className="h-12 sm:h-16 w-auto object-contain rounded-full"
         priority
       />
-      <span className="text-lg sm:text-xl font-semibold tracking-wide">Niko&apos;s Hotel</span>
+      <span className="text-lg sm:text-xl font-semibold tracking-wide">
+        Niko&apos;s Hotel
+      </span>
     </Link>
   );
 }
