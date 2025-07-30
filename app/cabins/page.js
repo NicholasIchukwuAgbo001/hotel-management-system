@@ -11,7 +11,7 @@ export const metadata = {
 export default async function Page() {
 
   return (
-    <div>
+    <div className="mt-10">
       <h1 className="text-4xl mb-5 text-accent-400 font-medium">
         Our Luxury Cabins
       </h1>
