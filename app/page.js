@@ -16,35 +16,45 @@ import bg9 from '@/public/bg9.jpg';
 import bg10 from '@/public/bg10.jpg';
 
 const images = [bg1, bg2, bg4, bg5, bg6, bg7, bg8, bg9, bg10];
-const fullText = "Welcome to paradise.";
+
+const fullText = [
+  "Welcome to paradise",
+  "Experience nature like never before",
+  "Your luxury getaway awaits",
+  "Find your perfect cabin",
+  "Unwind. recharge. explore.",
+];
 
 export default function Page() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [typedText, setTypedText] = useState("");
   const [charIndex, setCharIndex] = useState(0);
+  const [textIndex, setTextIndex] = useState(0);
 
   useEffect(() => {
-      setInterval(() => {
+    setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
   }, []);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (charIndex < fullText.length) {
-        setTypedText((prev) => prev + fullText[charIndex]);
+    const currentString = fullText[textIndex];
+    if (charIndex < currentString.length) {
+      const timeout = setTimeout(() => {
+        setTypedText((prev) => prev + currentString.charAt(charIndex));
         setCharIndex((prev) => prev + 1);
-      } else {
+      }, 100);
+      return () => clearTimeout(timeout);
+    } else {
 
-        setTimeout(() => {
-          setTypedText("");
-          setCharIndex(0);
-        }, 2000); 
-      }
-    }, 100); 
-
-    return () => clearTimeout(timeout);
-  }, [charIndex]);
+      const pause = setTimeout(() => {
+        setTypedText("");
+        setCharIndex(0);
+        setTextIndex((prev) => (prev + 1) % fullText.length);
+      }, 2000);
+      return () => clearTimeout(pause);
+    }
+  }, [charIndex, textIndex]);
 
   return (
     <main className="mt-24">
@@ -63,15 +73,15 @@ export default function Page() {
             placeholder="blur"
             quality={80}
             className="object-cover object-top"
-            alt="Mountains and forests with two cabins"
+            alt="Background image"
           />
         </motion.div>
       </AnimatePresence>
 
       <div className="relative text-center">
-        <h1 className="text-8xl text-yellow-500 mb-10 tracking-tight font-bold min-h-[10rem]">
+        <h1 className="text-6xl md:text-8xl text-yellow-500 mb-10 tracking-tight font-bold min-h-[10rem]">
           {typedText}
-          <span className="animate-pulse">|</span>
+          <span className="animate-pulse text-stone-500">|</span>
         </h1>
 
         <Link
