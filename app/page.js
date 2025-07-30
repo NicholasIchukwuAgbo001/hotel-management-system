@@ -18,11 +18,11 @@ import bg10 from '@/public/bg10.jpg';
 const images = [bg1, bg2, bg4, bg5, bg6, bg7, bg8, bg9, bg10];
 
 const fullText = [
-  "Welcome to paradise🌠",
-  "Experience nature🌳",
-  "Your luxury getaway awaits^_^",
-  "Find your perfect cabin🛖",
-  "Unwind. recharge. explore😻",
+  "Welcome to paradise",
+  "Experience nature",
+  "Your luxury getaway awaits",
+  "Find your perfect cabin",
+  "Unwind. recharge. explore",
 ];
 
 export default function Page() {
