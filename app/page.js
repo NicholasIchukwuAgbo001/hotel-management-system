@@ -23,12 +23,10 @@ export default function Page() {
   const [typedText, setTypedText] = useState("");
   const [charIndex, setCharIndex] = useState(0);
 
-  // Rotate background images
   useEffect(() => {
-    const interval = setInterval(() => {
+      setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
-    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
@@ -41,7 +39,7 @@ export default function Page() {
         setTimeout(() => {
           setTypedText("");
           setCharIndex(0);
-        }, 3000); 
+        }, 2000); 
       }
     }, 100); 
 
