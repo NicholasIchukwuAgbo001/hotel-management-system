@@ -1,62 +1,55 @@
-import TextExpander from "@/app/_components/TextExpander";
-import { getCabin } from "@/app/_lib/data-service";
-import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import { getCabin, getCabins } from "@/app/_lib/data-service";
+import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
 
-export async function generateMetadata(context) {
-  const params = await context.params;
-  const cabin = await getCabin(params.cabinId);
+// export const metadata = {
+//   title: "Cabin",
+// };
 
-  if (!cabin) {
-    return { title: "Cabin Not Found" };
-  }
-
-  return { title: `Cabin ${cabin.name}` };
+export async function generateMetadata({ params }) {
+  const { name } = await getCabin(params.cabinId);
+  return { title: `Cabin ${name}` };
 }
 
-export default async function Page(context) {
-  const params = await context.params;
+export async function generateStaticParams() {
+  const cabins = await getCabins();
+
+  const ids = cabins.map((cabin) => ({ cabinId: String(cabin.id) }));
+
+  return ids;
+}
+
+export default async function Page({ params }) {
   const cabin = await getCabin(params.cabinId);
 
-  if (!cabin) {
-    return (
-      <div className="text-red-600 text-center mt-16 text-xl">
-        Cabin not found.
-      </div>
-    );
-  }
-
-  const { name, maxCapacity, regularPrice, discount, image, description } = cabin;
+  const { id, name, maxCapacity, regularPrice, discount, image, description } =
+    cabin;
 
   return (
-    <div className="max-w-6xl mx-auto mt-8 px-4 sm:px-6">
-      <div className="grid grid-cols-1 md:grid-cols-[3fr_4fr] gap-10 md:gap-20 border border-primary-800 py-6 px-6 md:px-10 mb-24">
-        <div className="relative w-full h-[300px] md:h-[400px] overflow-hidden rounded-lg shadow-md">
+    <div className="max-w-6xl mx-auto mt-8">
+      <div className="grid grid-cols-[3fr_4fr] gap-20 border border-primary-800 py-3 px-10 mb-24">
+        <div className="relative scale-[1.15] -translate-x-3">
           <Image
-            src={image || "/fallback.jpg"}
-            alt={`Cabin ${name}`}
+            src={image}
             fill
             className="object-cover"
-            priority
+            alt={`Cabin ${name}`}
           />
         </div>
 
         <div>
-          <h3 className="text-accent-100 font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 bg-primary-950 p-4 rounded-lg shadow">
+          <h3 className="text-accent-100 font-black text-7xl mb-5 translate-x-[-254px] bg-primary-950 p-6 pb-1 w-[150%]">
             Cabin {name}
           </h3>
 
-          <div className="text-lg text-primary-300 mb-10">
-            <TextExpander>
-              {description}
-            </TextExpander>
-          </div>
+          <p className="text-lg text-primary-300 mb-10">{description}</p>
 
           <ul className="flex flex-col gap-4 mb-7">
             <li className="flex gap-3 items-center">
               <UsersIcon className="h-5 w-5 text-primary-600" />
               <span className="text-lg">
-                For up to <span className="font-bold">{maxCapacity}</span> guests
+                For up to <span className="font-bold">{maxCapacity}</span>{" "}
+                guests
               </span>
             </li>
             <li className="flex gap-3 items-center">
@@ -77,8 +70,8 @@ export default async function Page(context) {
       </div>
 
       <div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center text-primary-100">
-          Reserve today. Pay on arrival.
+        <h2 className="text-5xl font-semibold text-center">
+          Reserve {name} today. Pay on arrival.
         </h2>
       </div>
     </div>
