@@ -1,38 +1,33 @@
-'use client';
-
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import Link from "next/link";
 
 export default function Navigation() {
-  const pathname = usePathname();
-
-  const links = [
-    { href: '/rooms', label: 'Rooms' },
-    { href: '/about', label: 'About' },
-    { href: '/account', label: 'Guest area' },
-  ];
-
   return (
-    <nav className="z-10 text-base sm:text-lg">
-      <ul className="flex gap-8 sm:gap-12 items-center">
-        {links.map(({ href, label }) => {
-          const isActive = pathname === href;
-
-          return (
-            <li key={href}>
-              <Link
-                href={href}
-                className={`transition-colors duration-200 ${
-                  isActive
-                    ? 'text-accent-400 font-semibold border-b'
-                    : 'text-primary-300 hover:text-accent-400'
-                }`}
-              >
-                {label}
-              </Link>
-            </li>
-          );
-        })}
+    <nav className="z-10 text-xl">
+      <ul className="flex gap-16 items-center">
+        <li>
+          <Link
+            href="/cabins"
+            className="hover:text-accent-400 transition-colors"
+          >
+            Cabins
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/about"
+            className="hover:text-accent-400 transition-colors"
+          >
+            About
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/account"
+            className="hover:text-accent-400 transition-colors"
+          >
+            Guest area
+          </Link>
+        </li>
       </ul>
     </nav>
   );

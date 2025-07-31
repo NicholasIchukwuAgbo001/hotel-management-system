@@ -22,7 +22,7 @@ function Filter() {
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
-        All rooms
+        All cabins
       </Button>
       <Button
         filter="small"
