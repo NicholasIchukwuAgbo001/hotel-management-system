@@ -14,11 +14,11 @@ import { ReservationProvider } from "./_components/ReservationContext";
 
 export const metadata = {
   title: {
-    template: "%s / The Wild Oasis",
-    default: "Welcome / The Wild Oasis",
+    template: "%s / The Niko's Hotel",
+    default: "Welcome / The Niko's Hotel",
   },
   description:
-    "Luxurious cabin hotel, located in the heart of the Italian Dolomites, surrounded by beautiful mountains and dark forests",
+    "Luxurious hotel, located in the heart of the Italian Dolomites, surrounded by beautiful mountains and dark forests",
 };
 
 export default function RootLayout({ children }) {
