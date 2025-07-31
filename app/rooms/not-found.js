@@ -7,10 +7,10 @@ function NotFound() {
         This room could not be found 😢
       </h1>
       <Link
-        href='/cabins'
+        href='/rooms'
         className='inline-block bg-accent-500 text-primary-800 px-6 py-3 text-lg'
       >
-        Go back to all cabins
+        Go back to all rooms
       </Link>
     </main>
   );

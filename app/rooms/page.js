@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import CabinList from "../_components/CabinList";
+import CabinList from "../_components/RoomList";
 import Spinner from "../_components/Spinner";
 import Filter from "../_components/Filter";
 import ReservationReminder from "../_components/ReservationReminder";
@@ -7,7 +7,7 @@ import ReservationReminder from "../_components/ReservationReminder";
 export const revalidate = 3600;
 
 export const metadata = {
-  title: "Cabins",
+  title: "Rooms",
 };
 
 export default function Page({ searchParams }) {
