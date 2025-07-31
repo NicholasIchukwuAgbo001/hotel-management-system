@@ -70,7 +70,7 @@ export default async function Page() {
               href="/rooms"
               className="inline-block mt-4 bg-accent-500 px-8 py-5 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all"
             >
-              Explore our luxury cabins
+              Explore our luxury rooms
             </Link>
           </div>
         </div>
