@@ -33,7 +33,7 @@ function CabinCard({ cabin }) {
             {discount > 0 ? (
               <>
                 <span className="text-3xl font-[350]">
-                  ${regularPrice - discount}
+                  ₦{regularPrice - discount}
                 </span>
                 <span className="line-through font-semibold text-primary-600">
                   ${regularPrice}
