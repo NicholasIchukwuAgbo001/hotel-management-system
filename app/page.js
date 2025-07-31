@@ -32,7 +32,7 @@ export default function Page() {
 
       <div className="relative z-10 text-center">
         <h1 className="text-8xl text-yellow-500 mb-10 tracking-tight font-bold">
-          {typedText}
+          {typedText}|
         </h1>
         <Link
           href="/cabins"
