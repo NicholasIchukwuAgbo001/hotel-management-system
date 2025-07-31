@@ -1,8 +1,24 @@
+"use client"
+
 import Link from "next/link";
 import Image from "next/image";
 import bg from "@/public/bg.png";
+import useTypedText from "@/app/_hooks/useTypedText";
 
 export default function Page() {
+
+    const messages = [
+    "Welcome to paradise.",
+    "Escape to serenity.",
+    "Relax. Recharge. Repeat.",
+    "Unwind in style.",
+    "Find your next stay.",
+    "Welcome to paradise.",
+  ];
+
+  
+  const typedText = useTypedText(messages, 80);
+
   return (
     <main className="mt-24">
       <Image
@@ -16,7 +32,7 @@ export default function Page() {
 
       <div className="relative z-10 text-center">
         <h1 className="text-8xl text-yellow-500 mb-10 tracking-tight font-bold">
-          Welcome to paradise.
+          {typedText}
         </h1>
         <Link
           href="/cabins"
