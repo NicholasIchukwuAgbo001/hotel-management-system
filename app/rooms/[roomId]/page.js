@@ -3,10 +3,14 @@ import Reservation from "@/app/_components/Reservation";
 import Spinner from "@/app/_components/Spinner";
 import { getCabin, getCabins } from "@/app/_lib/data-service";
 
+import Image from "next/image";
 import { Suspense } from "react";
 
-export async function generateMetadata(props) {
-  const params = await props.params;
+// export const metadata = {
+//   title: "Cabin",
+// };
+
+export async function generateMetadata({ params }) {
   const { name } = await getCabin(params.cabinId);
   return { title: `Cabin ${name}` };
 }
@@ -19,8 +23,7 @@ export async function generateStaticParams() {
   return ids;
 }
 
-export default async function Page(props) {
-  const params = await props.params;
+export default async function Page({ params }) {
   const cabin = await getCabin(params.cabinId);
 
   return (
