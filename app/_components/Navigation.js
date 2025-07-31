@@ -7,7 +7,7 @@ export default function Navigation() {
   const pathname = usePathname();
 
   const links = [
-    { href: '/cabins', label: 'Cabins' },
+    { href: '/cabins', label: 'Rooms' },
     { href: '/about', label: 'About' },
     { href: '/account', label: 'Guest area' },
   ];

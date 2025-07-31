@@ -16,15 +16,14 @@ export default function Page({ searchParams }) {
   return (
     <div>
       <h1 className="text-4xl mb-5 text-accent-400 font-medium">
-        Our Luxury Cabins
+        Our Luxury Rooms
       </h1>
       <p className="text-primary-200 text-lg mb-10">
-        Cozy yet luxurious cabins, located right in the heart of the Italian
-        Dolomites. Imagine waking up to beautiful mountain views, spending your
-        days exploring the dark forests around, or just relaxing in your private
-        hot tub under the stars. Enjoy nature&apos;s beauty in your own little
-        home away from home. The perfect spot for a peaceful, calm vacation.
-        Welcome to paradise.
+        Elegant and comfortable rooms, located in the heart of the city. Wake up to 
+        stunning skyline views, spend your day indulging in fine dining and spa 
+        experiences, or simply relax in your suite. Your private escape, where modern 
+        luxury meets timeless comfort. The perfect place for rest and renewal. 
+        Welcome to your sanctuary.
       </p>
 
       <div className="flex justify-end mb-8">

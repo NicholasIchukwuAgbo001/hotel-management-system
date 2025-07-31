@@ -18,10 +18,9 @@ function Cabin({ cabin }) {
         />
       </div>
 
-      {/* Text Section */}
       <div className="flex flex-col justify-center">
         <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-accent-100 font-black mb-4">
-          Cabin {name}
+          Room {name}
         </h3>
 
         <p className="text-base sm:text-lg text-primary-300 mb-6">

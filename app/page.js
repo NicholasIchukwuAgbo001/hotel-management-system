@@ -7,13 +7,13 @@ import useTypedText from "@/app/_hooks/useTypedText";
 
 export default function Page() {
 
-    const messages = [
-    "Welcome to paradise.",
-    "Escape to serenity.",
-    "Relax. Recharge. Repeat.",
-    "Unwind in style.",
-    "Find your next stay.",
-    "Welcome to paradise.",
+  const messages = [
+    "Welcome to luxury.",
+    "Relax.",
+    "Unwind.",
+    "Stay in style.",
+    "Pure comfort.",
+    "Welcome to luxury.",
   ];
 
   
@@ -26,12 +26,12 @@ export default function Page() {
         fill
         placeholder="blur"
         quality={80}
-        className="object-cover object-top"
+        className=""
         alt="Mountains and forests with two cabins"
       />
 
       <div className="relative z-10 text-center">
-        <h1 className="text-8xl text-yellow-500 mb-10 tracking-tight font-bold">
+        <h1 className="text-7xl text-yellow-500 mb-10 tracking-tight font-bold">
           {typedText}|
         </h1>
         <Link
