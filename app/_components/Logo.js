@@ -1,21 +1,20 @@
-import Link from "next/link";
 import Image from "next/image";
-import logo from "@/public/hotel-logo.png";
+import Link from "next/link";
+import logo from "@/public/logo.png";
 
 function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-4 z-20">
+    <Link href="/" className="flex items-center gap-4 z-10">
+      {/* <Image src="/logo.png" height="60" width="60" alt="The Wild Oasis logo" /> */}
       <Image
         src={logo}
-        alt="Niko's Hotel logo"
-        width={100}
-        height={60}
+        height="60"
         quality={100}
-        className="h-12 sm:h-16 w-auto object-contain rounded-full"
-        priority
+        width="60"
+        alt="The Wild Oasis logo"
       />
-      <span className="text-lg sm:text-xl font-semibold tracking-wide">
-        Niko&apos;s Hotel
+      <span className="text-xl font-semibold text-primary-100">
+        The Wild Oasis
       </span>
     </Link>
   );
