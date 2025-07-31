@@ -10,7 +10,7 @@ function Logo() {
         height="70"
         quality={100}
         width="70"
-        alt="The Wild Oasis logo"
+        alt="The Niko's logo"
         className="rounded-full"
       />
       <span className="text-xl font-semibold text-primary-100">
