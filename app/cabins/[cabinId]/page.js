@@ -10,7 +10,8 @@ import { Suspense } from "react";
 //   title: "Cabin",
 // };
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   const { name } = await getCabin(params.cabinId);
   return { title: `Cabin ${name}` };
 }
@@ -23,7 +24,8 @@ export async function generateStaticParams() {
   return ids;
 }
 
-export default async function Page({ params }) {
+export default async function Page(props) {
+  const params = await props.params;
   const cabin = await getCabin(params.cabinId);
 
   return (
