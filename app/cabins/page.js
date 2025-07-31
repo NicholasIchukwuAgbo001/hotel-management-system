@@ -9,9 +9,10 @@ export const metadata = {
   title: "Cabins",
 };
 
-export default function Page({searchParams}) {
+export default async function Page(props) {
+  const searchParams = await props.searchParams;
   const filter = searchParams?.capacity ?? "all"
-  
+
   return (
     <div className="mt-10">
       <h1 className="text-4xl mb-5 text-accent-400 font-medium">
