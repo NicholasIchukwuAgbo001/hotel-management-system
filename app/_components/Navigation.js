@@ -24,7 +24,7 @@ export default function Navigation() {
                 href={href}
                 className={`transition-colors duration-200 ${
                   isActive
-                    ? 'text-accent-400 font-semibold'
+                    ? 'text-accent-400 font-semibold border-b'
                     : 'text-primary-300 hover:text-accent-400'
                 }`}
               >
