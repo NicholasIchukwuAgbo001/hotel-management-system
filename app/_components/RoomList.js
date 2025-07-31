@@ -3,7 +3,7 @@ import { unstable_noStore as noStore } from "next/cache";
 import CabinCard from "@/app/_components/RoomCard";
 import { getCabins } from "../_lib/data-service";
 
-async function CabinList({ filter }) {
+async function RoomList({ filter }) {
   const cabins = await getCabins();
 
   if (!cabins.length) return null;
@@ -28,4 +28,4 @@ async function CabinList({ filter }) {
   );
 }
 
-export default CabinList;
+export default RoomList;

@@ -35,7 +35,7 @@ export default function Page() {
           {typedText}|
         </h1>
         <Link
-          href="/cabins"
+          href="/rooms"
           className="bg-accent-500 px-8 py-6 text-primary-800 text-lg rounded-sm font-semibold hover:bg-accent-600 transition-all"
         >
           Explore luxury Hotel Rooms

@@ -2,12 +2,12 @@ import Image from "next/image";
 import TextExpander from "@/app/_components/TextExpander";
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
 
-function Cabin({ cabin }) {
-  const { id, name, maxCapacity, regularPrice, discount, image, description } = cabin;
+function Rooms ({ room }) {
+  const { id, name, maxCapacity, regularPrice, discount, image, description } = room;
 
   return (
     <div className="flex flex-col lg:grid lg:grid-cols-[3fr_4fr] gap-8 lg:gap-20 border border-primary-800 rounded-xl overflow-hidden mb-16 p-4 sm:p-6 lg:p-10">
-      {/* Image Section */}
+    
       <div className="relative w-full h-64 sm:h-80 lg:h-auto">
         <Image
           src={image}
@@ -46,4 +46,4 @@ function Cabin({ cabin }) {
   );
 }
 
-export default Cabin;
+export default Rooms;
