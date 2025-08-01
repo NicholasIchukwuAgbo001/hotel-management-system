@@ -8,7 +8,7 @@ function CabinCard({ cabin }) {
   return (
     <div className="border border-primary-800 flex flex-col md:flex-row rounded-xl overflow-hidden bg-primary-950">
     
-      <div className="relative w-full h-64 md:w-1/2 md:h-auto">
+      <div className="relative w-full h-64 md:h-auto">
         <Image
           src={image}
           alt={`Cabin ${name}`}
@@ -44,7 +44,7 @@ function CabinCard({ cabin }) {
             ) : (
               <span className="text-2xl sm:text-3xl font-[350]">${regularPrice}</span>
             )}
-            <span className="text-primary-200 text-sm sm:text-base">/ night</span>
+            <span className="text-primary-200 text-sm sm:text-base">/night</span>
           </p>
         </div>
 
