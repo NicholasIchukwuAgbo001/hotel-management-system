@@ -2,12 +2,17 @@
 
 import { createContext, useContext, useState } from "react";
 
-const ReservationContext = createContext();
-
+// Initial state: no date selected
 const initialState = { from: undefined, to: undefined };
 
+// Create context
+const ReservationContext = createContext();
+
+// Provider component
 function ReservationProvider({ children }) {
   const [range, setRange] = useState(initialState);
+
+  // Reset selected dates
   const resetRange = () => setRange(initialState);
 
   return (
@@ -17,10 +22,11 @@ function ReservationProvider({ children }) {
   );
 }
 
+// Hook to use the context
 function useReservation() {
   const context = useContext(ReservationContext);
   if (context === undefined)
-    throw new Error("Context was used outside provider");
+    throw new Error("useReservation must be used within a ReservationProvider");
   return context;
 }
 
