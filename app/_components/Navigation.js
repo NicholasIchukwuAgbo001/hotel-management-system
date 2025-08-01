@@ -49,7 +49,6 @@ export default function Navigation() {
           );
         })}
 
-        {/* Sliding underline */}
         <span
           className="absolute bottom-0 h-[2px] bg-accent-400 transition-all duration-300"
           style={{
