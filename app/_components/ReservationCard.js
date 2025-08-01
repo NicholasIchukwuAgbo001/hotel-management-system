@@ -25,7 +25,7 @@ function ReservationCard({ booking }) {
 
   return (
     <div className="flex flex-col md:flex-row border border-primary-800 rounded-lg overflow-hidden bg-primary-950">
-      {/* Image */}
+     
       <div className="relative h-40 md:h-auto md:w-40">
         <Image
           src={image}
@@ -35,7 +35,6 @@ function ReservationCard({ booking }) {
         />
       </div>
 
-      {/* Details */}
       <div className="flex-grow px-5 py-4 flex flex-col gap-2">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
           <h3 className="text-xl font-semibold">
@@ -72,7 +71,6 @@ function ReservationCard({ booking }) {
         </div>
       </div>
 
-      {/* Actions */}
       <div className="flex md:flex-col border-t md:border-t-0 md:border-l border-primary-800">
         <Link
           href={`/account/reservations/edit/${id}`}
