@@ -7,7 +7,7 @@ import ReservationReminder from "../_components/ReservationReminder";
 export const revalidate = 3600;
 
 export const metadata = {
-  title: "Cabins",
+  title: "Rooms",
 };
 
 export default async function Page(props) {
