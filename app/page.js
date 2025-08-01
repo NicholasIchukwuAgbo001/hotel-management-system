@@ -23,13 +23,13 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="mt-24">
+    <main className="">
       <Image
         src={bg}
         fill
         placeholder="blur"
         quality={80}
-        className="object-cover object-top"
+        className="object-cover object-top absolute"
         alt="Mountains and forests with two cabins"
       />
 

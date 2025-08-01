@@ -10,7 +10,7 @@ function Header() {
   const handleNavClick = () => setIsOpen(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-primary-950 border-b border-primary-900 px-4 sm:px-6 md:px-8 py-3 backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-primary-950 border-b border-primary-900 px-4 sm:px-6 md:px-8 py-2 backdrop-blur-md">
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         <Logo />
 
