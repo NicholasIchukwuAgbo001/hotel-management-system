@@ -10,4 +10,4 @@ const authConfig = {
     ]
 }
 
-export const {auth, handlers: {GET, POST}} = NextAuth(authConfig)
+export const {auth, handlers: {GET, POST},} = NextAuth(authConfig)
