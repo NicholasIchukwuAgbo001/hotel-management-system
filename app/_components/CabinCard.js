@@ -6,9 +6,9 @@ function CabinCard({ cabin }) {
   const { id, name, maxCapacity, regularPrice, discount, image } = cabin;
 
   return (
-    <div className="border border-primary-800 flex flex-col md:flex-row rounded-xl overflow-hidden bg-primary-950">
+    <div className="border border-primary-800 flex pt-14 flex-col md:flex-row rounded-xl overflow-hidden bg-primary-950">
     
-      <div className="relative w-full h-64 md:h-auto">
+      <div className="relative w-full h-64 md:h-auto hover:scale-105 transition-all duration-500">
         <Image
           src={image}
           alt={`Cabin ${name}`}
