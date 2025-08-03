@@ -15,7 +15,7 @@ function Logo() {
         className="rounded-full"
       />
       <span className="text-xl font-semibold text-primary-100">
-        The Niko&apos;s Hotel
+        Niko&apos;s Hotel
       </span>
     </Link>
   );

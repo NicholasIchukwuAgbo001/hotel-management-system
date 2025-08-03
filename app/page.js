@@ -26,7 +26,7 @@ export default function Page() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % messages.length);
-    }, 2000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
