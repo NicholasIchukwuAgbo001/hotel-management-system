@@ -3,23 +3,31 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import bg from "@/public/bg.png";
 
 const messages = [
   "Welcome to paradise.",
-  "Unwind in nature.",
-  "Luxury meets comfort.",
-  "Find your escape.",
-  "Your dream Hotel awaits.",
+  "Escape beautifully.",
+  "Nature. Reimagined.",
+  "Luxury, defined.",
+  "Serenity begins here.",
+  "Timeless tranquility.",
+  "Unwind in style.",
+  "Breathe. Stay. Belong.",
+  "Elevate your escape.",
+  "Pure indulgence.",
+  "Welcome home.",
 ];
 
 export default function Page() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % messages.length);
-    }, 5000);
+    }, 2000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -33,10 +41,19 @@ export default function Page() {
         alt="Mountains and forests with two cabins"
       />
 
-      <div className="relative z-10 text-center mt-40">
-        <h1 className="text-6xl sm:text-7xl md:text-8xl text-primary-50 mb-10 tracking-tight font-semibold transition-opacity duration-500 ease-in-out">
-          {messages[currentIndex]}
-        </h1>
+      <div className="relative z-10 text-center mt-40 px-4">
+        <AnimatePresence mode="wait">
+          <motion.h1
+            key={currentIndex}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="text-5xl sm:text-6xl md:text-7xl text-primary-50 mb-10 tracking-tight font-semibold"
+          >
+            {messages[currentIndex]}
+          </motion.h1>
+        </AnimatePresence>
 
         <Link
           href="/cabins"
