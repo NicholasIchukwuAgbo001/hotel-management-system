@@ -15,9 +15,9 @@ function ReservationCard({ booking }) {
     guestId,
     startDate,
     endDate,
-    numNights,
+    numNight,
     totalPrice,
-    numGuests,
+    numGuest,
     status,
     created_at,
     cabins: { name, image },
@@ -25,7 +25,6 @@ function ReservationCard({ booking }) {
 
   return (
     <div className="flex flex-col md:flex-row border border-primary-800 rounded-lg overflow-hidden bg-primary-950">
-     
       <div className="relative h-40 md:h-auto md:w-40">
         <Image
           src={image}
@@ -38,7 +37,7 @@ function ReservationCard({ booking }) {
       <div className="flex-grow px-5 py-4 flex flex-col gap-2">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
           <h3 className="text-xl font-semibold">
-            {numNights} night{numNights > 1 && "s"} in Room {name}
+            {numNight} night{numNight > 1 && "s"} in Room {name}
           </h3>
           <span
             className={`h-7 px-3 uppercase text-xs font-bold flex items-center rounded-sm ${
@@ -63,7 +62,7 @@ function ReservationCard({ booking }) {
           <p className="text-accent-400 font-semibold text-lg">${totalPrice}</p>
           <p className="text-primary-300">&bull;</p>
           <p className="text-primary-300">
-            {numGuests} guest{numGuests > 1 && "s"}
+            {numGuest} guest{numGuest > 1 && "s"}
           </p>
           <p className="ml-auto text-primary-400 text-xs sm:text-sm whitespace-nowrap">
             Booked {format(new Date(created_at), "EEE, MMM dd yyyy, p")}
@@ -72,17 +71,22 @@ function ReservationCard({ booking }) {
       </div>
 
       <div className="flex md:flex-col border-t md:border-t-0 md:border-l border-primary-800">
-        <Link
-          href={`/account/reservations/edit/${id}`}
-          className="group flex items-center justify-center gap-2 uppercase text-xs font-bold text-primary-300 border-r md:border-b md:border-r-0 border-primary-800 px-4 py-3 hover:bg-accent-600 hover:text-primary-900 transition-colors w-full md:w-[100px]"
-        >
-          <PencilSquareIcon className="h-5 w-5 text-primary-600 group-hover:text-primary-800 transition-colors" />
-          <span>Edit</span>
-        </Link>
-        <DeleteReservation bookingId={id} />
+        {!isPast(startDate) && (
+          <>
+            <Link
+              href={`/account/reservations/edit/${id}`}
+              className="group flex items-center justify-center gap-2 uppercase text-xs font-bold text-primary-300 border-r md:border-b md:border-r-0 border-primary-800 px-4 py-3 hover:bg-accent-600 hover:text-primary-900 transition-colors w-full md:w-[100px]"
+            >
+              <PencilSquareIcon className="h-5 w-5 text-primary-600 group-hover:text-primary-800 transition-colors" />
+              <span>Edit</span>
+            </Link>
+            <DeleteReservation bookingId={id} />
+          </>
+        )}
       </div>
     </div>
   );
 }
+
 
 export default ReservationCard;
