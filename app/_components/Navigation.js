@@ -9,7 +9,7 @@ export default async function Navigation() {
       <ul className="flex gap-16 items-center">
         <li>
           <Link href="/cabins" className="hover:text-accent-400 transition-colors">
-            Cabins
+            Rooms
           </Link>
         </li>
 
