@@ -5,7 +5,6 @@ import logo from "@/public/hotel-logo.png";
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-4 z-10">
-      
       <Image
         src={logo}
         height="60"
