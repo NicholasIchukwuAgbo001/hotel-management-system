@@ -2,9 +2,7 @@ import { getBooking, getCabin } from "@/app/_lib/data-service";
 
 export default async function Page(props) {
   const { bookingId } = (await props.params);
-  
   const { numGuest, observations, cabinId } = await getBooking(bookingId);
-
   const { maxCapacity } = await getCabin(cabinId);
 
   return (
