@@ -16,4 +16,3 @@ export async function GET(request, props) {
   }
 }
 
-// export async function POST() {}
