@@ -1,15 +1,9 @@
 import { getBooking, getCabin } from "@/app/_lib/data-service";
 
-export default async function Page({ params }) {
-  const { bookingId } = params;
-
-  const booking = await getBooking(bookingId);
-
-  if (!booking) {
-    return <p className="text-red-500">Booking not found.</p>;
-  }
-
-  const { numGuests, observations, cabinId } = booking;
+export default async function Page(props) {
+  const { bookingId } = (await props.params);
+  
+  const { numGuest, observations, cabinId } = await getBooking(bookingId);
 
   const { maxCapacity } = await getCabin(cabinId);
 
@@ -19,14 +13,14 @@ export default async function Page({ params }) {
         Edit Reservation #{bookingId}
       </h2>
 
-      <form  
+      <form 
        className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col">
         <div className="space-y-2">
           <label htmlFor="numGuests">How many guests?</label>
           <select
             name="numGuests"
             id="numGuests"
-            defaultValue={numGuests}
+            defaultValue={numGuest}
             className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
             required
           >
