@@ -92,7 +92,7 @@ export async function getBookings(guestId) {
       startDate,
       endDate,
       numNight,
-      numGuest,
+      numGuests,
       totalPrice,
       guestId,
       cabinId,

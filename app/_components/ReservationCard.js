@@ -17,7 +17,7 @@ function ReservationCard({ booking }) {
     endDate,
     numNight,
     totalPrice,
-    numGuest,
+    numGuests,
     status,
     created_at,
     cabins: { name, image },
@@ -62,7 +62,7 @@ function ReservationCard({ booking }) {
           <p className="text-accent-400 font-semibold text-lg">${totalPrice}</p>
           <p className="text-primary-300">&bull;</p>
           <p className="text-primary-300">
-            {numGuest} guest{numGuest > 1 && "s"}
+            {numGuests} guest{numGuests > 1 && "s"}
           </p>
           <p className="ml-auto text-primary-400 text-xs sm:text-sm whitespace-nowrap">
             Booked {format(new Date(created_at), "EEE, MMM dd yyyy, p")}
