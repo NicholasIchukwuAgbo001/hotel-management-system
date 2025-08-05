@@ -66,11 +66,11 @@ export default async function Page() {
 
       <div className="md:col-span-2 xl:col-span-3 order-4">
         <h2 className="text-3xl md:text-4xl mb-6 text-accent-400 font-semibold">
-          Managed by our family since 1962
+          Managed by our family since 2000
         </h2>
         <div className="space-y-5 md:space-y-6 leading-relaxed">
           <p>
-            Since 1962, Niko&apos;s Hotel has been a cherished family-run retreat.
+            Since 2000, Niko&apos;s Hotel has been a cherished family-run retreat.
             Started by our grandparents, this haven has been nurtured with love
             and care, passing down through our family as a testament to our
             dedication to creating a warm, welcoming environment.
