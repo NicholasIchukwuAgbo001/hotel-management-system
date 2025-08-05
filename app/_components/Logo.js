@@ -10,12 +10,12 @@ function Logo() {
         height="60"
         quality={100}
         width="60"
-        alt="The Niko'slogo"
+        alt="The Niko's logo"
         className="rounded-full"
       />
-      {/* <span className="text-xl font-semibold text-primary-100">
+      <span className="hidden md:inline text-xl font-semibold text-primary-100">
         Niko&apos;s Hotel
-      </span> */}
+      </span>
     </Link>
   );
 }
