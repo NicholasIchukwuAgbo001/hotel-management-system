@@ -31,14 +31,14 @@ export default async function Navigation() {
                 alt={session.user.name}
                 referrerPolicy="no-referrer"
               />  
-              <span>Guest area</span>      
+              <span>Guest</span>      
             </Link>
           ) : (
             <Link
               href="/account"
               className="hover:text-accent-400 transition-colors flex items-center gap-4"
             >
-              Guest
+              Guest area
             </Link>
           )}
         </li>
