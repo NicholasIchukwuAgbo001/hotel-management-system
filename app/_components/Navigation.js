@@ -38,7 +38,7 @@ export default async function Navigation() {
               href="/account"
               className="hover:text-accent-400 transition-colors flex items-center gap-4"
             >
-              Guest area
+              Guest
             </Link>
           )}
         </li>
